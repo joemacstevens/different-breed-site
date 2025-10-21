@@ -786,7 +786,8 @@ footer a:hover {
     }
 
     .hero h1 {
-        font-size: 5rem;
+        font-size: 4rem;
+        line-height: 1.05;
     }
 
     .services-grid,
@@ -827,7 +828,8 @@ footer a:hover {
     }
 
     .hero h1 {
-        font-size: 5rem;
+        font-size: 3.1rem;
+        line-height: 1.1;
     }
 
     .hero-price {
@@ -852,5 +854,16 @@ footer a:hover {
 
     .stats-container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 540px) {
+    .hero h1 {
+        font-size: 2.4rem;
+        line-height: 1.15;
+    }
+
+    .hero .subtitle {
+        font-size: 1.1rem;
     }
 }
