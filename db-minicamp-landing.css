@@ -210,6 +210,22 @@ body {
     text-transform: uppercase;
 }
 
+.hero-price-note .hero-price-link {
+    color: rgba(255,255,255,0.85);
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.hero-price-note .hero-price-link:visited {
+    color: rgba(255,255,255,0.85);
+}
+
+.hero-price-note .hero-price-link:hover,
+.hero-price-note .hero-price-link:focus {
+    color: var(--red-accent);
+}
+
 .hero-details {
     font-size: 1.2rem;
     color: rgba(255,255,255,0.9);
@@ -221,6 +237,11 @@ body {
     display: flex;
     gap: 1.5rem;
     margin-top: 3rem;
+    align-items: center;
+}
+
+.cta-group healcode-widget {
+    display: inline-flex;
 }
 
 .btn-primary {
@@ -495,6 +516,29 @@ body {
     text-align: center;
 }
 
+.schedule-motif-wrap {
+    padding: 2rem 0 1.5rem;
+    text-align: center;
+    margin-top: -35px;
+    margin-bottom: -127px;
+}
+
+.section-motif {
+    width: 250px;
+    max-width: 60vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.quote-motif {
+    width: 250px;
+    max-width: 60vw;
+    height: auto;
+    margin: 0 auto 2rem;
+    display: block;
+}
+
 .quote-text {
     font-size: 2.5rem;
     font-weight: 700;
@@ -661,7 +705,7 @@ body {
 footer {
     background: #000000;
     color: rgba(255,255,255,0.6);
-    padding: 4rem 6%;
+    padding: 3rem 6%;
     border-top: 1px solid #222222;
     text-align: center;
 }
@@ -669,6 +713,57 @@ footer {
 footer p {
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+    text-align: left;
+    align-items: start;
+}
+
+.footer-main p {
+    margin-bottom: 0.4rem;
+}
+
+.footer-main strong {
+    color: #ffffff;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.footer-links h4 {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #1a1a1a;
+}
+
+.footer-lockup {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.75rem;
+}
+
+.footer-bottom p:last-child {
+    margin-bottom: 0;
 }
 
 footer a {
@@ -707,6 +802,15 @@ footer a:hover {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-main {
+        text-align: center;
+    }
+
+    .footer-links {
+        align-items: center;
     }
 
     .contact-form {
