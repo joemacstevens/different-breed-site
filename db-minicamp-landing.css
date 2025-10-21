@@ -519,12 +519,12 @@ body {
 .schedule-motif-wrap {
     padding: 2rem 0 1.5rem;
     text-align: center;
-    margin-top: -35px;
-    margin-bottom: -127px;
+    margin-top: -75px;
+    margin-bottom: -165px;
 }
 
 .section-motif {
-    width: 250px;
+    width: 333px;
     max-width: 60vw;
     height: auto;
     display: block;
