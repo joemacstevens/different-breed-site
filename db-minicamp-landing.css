@@ -80,7 +80,7 @@ body {
     position: relative;
     background: #000000;
     color: #ffffff;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .hero-video-container {
@@ -242,6 +242,91 @@ body {
 
 .cta-group healcode-widget {
     display: inline-flex;
+}
+
+.cta-dropdown {
+    position: relative;
+}
+
+.cta-dropdown .dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.cta-dropdown .dropdown-icon {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-right: 2px solid rgba(255,255,255,0.8);
+    border-bottom: 2px solid rgba(255,255,255,0.8);
+    transform: rotate(45deg);
+    margin-left: 0.25rem;
+    transition: transform 0.2s ease;
+}
+
+.cta-dropdown.is-open .dropdown-icon {
+    transform: rotate(-135deg);
+}
+
+.cta-dropdown .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 0;
+    min-width: 280px;
+    width: max-content;
+    background: rgba(0,0,0,0.92);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 1.2rem;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 25;
+}
+
+.cta-dropdown.is-open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.cta-dropdown .dropdown-heading {
+    font-size: 0.8rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 0.75rem;
+}
+
+.cta-dropdown .dropdown-option {
+    display: block;
+}
+
+.cta-dropdown .dropdown-option + .dropdown-option {
+    margin-top: 0.5rem;
+}
+
+.cta-dropdown .dropdown-link {
+    display: block;
+    background: rgba(255,255,255,0.08);
+    color: #ffffff;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-dropdown .dropdown-link:hover,
+.cta-dropdown .dropdown-link:focus {
+    background: rgba(227,24,55,0.9);
+    transform: translateY(-1px);
 }
 
 .btn-primary {
@@ -850,6 +935,22 @@ footer a:hover {
 
     .cta-group {
         flex-direction: column;
+    }
+
+    .cta-dropdown {
+        width: 100%;
+    }
+
+    .cta-dropdown .dropdown-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cta-dropdown .dropdown-menu {
+        width: 100%;
+        min-width: unset;
+        top: calc(100% + 0.5rem);
+        padding: 1rem;
     }
 
     .stats-container {

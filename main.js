@@ -40,4 +40,66 @@ document.addEventListener('DOMContentLoaded', function () {
             detailsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     }
+
+    const registerDropdowns = Array.from(document.querySelectorAll('.cta-dropdown'));
+
+    if (registerDropdowns.length) {
+        const closeDropdown = (dropdown) => {
+            dropdown.classList.remove('is-open');
+            const toggleButton = dropdown.querySelector('.dropdown-toggle');
+            if (toggleButton) {
+                toggleButton.setAttribute('aria-expanded', 'false');
+            }
+        };
+
+        const openDropdown = (dropdown) => {
+            dropdown.classList.add('is-open');
+            const toggleButton = dropdown.querySelector('.dropdown-toggle');
+            if (toggleButton) {
+                toggleButton.setAttribute('aria-expanded', 'true');
+            }
+        };
+
+        const closeAllDropdowns = () => {
+            registerDropdowns.forEach(closeDropdown);
+        };
+
+        registerDropdowns.forEach((dropdown) => {
+            const toggleButton = dropdown.querySelector('.dropdown-toggle');
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+            if (!toggleButton || !dropdownMenu) {
+                return;
+            }
+
+            toggleButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const isOpen = dropdown.classList.contains('is-open');
+                closeAllDropdowns();
+                if (!isOpen) {
+                    openDropdown(dropdown);
+                }
+            });
+
+            dropdownMenu.addEventListener('click', (event) => {
+                const optionLink = event.target.closest('.dropdown-link');
+                if (optionLink) {
+                    closeAllDropdowns();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            const clickedInside = registerDropdowns.some((dropdown) => dropdown.contains(event.target));
+            if (!clickedInside) {
+                closeAllDropdowns();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeAllDropdowns();
+            }
+        });
+    }
 });
