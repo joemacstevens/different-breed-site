@@ -525,6 +525,32 @@ body {
     margin: 0 auto;
 }
 
+.schedule-callout {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding: 1.25rem 1.75rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.callout-label {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--red-accent);
+    font-size: 0.85rem;
+}
+
+.callout-text {
+    color: rgba(255, 255, 255, 0.75);
+}
+
 .schedule-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -684,6 +710,62 @@ body {
 .testimonial-author {
     font-weight: 700;
     color: #000000;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: #ffffff;
+    padding: 8rem 6%;
+}
+
+.faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+    align-items: stretch;
+}
+
+.faq-item {
+    background: #f8f8f8;
+    border: 1px solid #e5e5e5;
+    padding: 2.5rem;
+    border-radius: 18px;
+    animation: fadeInUp 0.6s ease-out both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.faq-item:nth-child(1) { animation-delay: 0.1s; }
+.faq-item:nth-child(2) { animation-delay: 0.2s; }
+.faq-item:nth-child(3) { animation-delay: 0.3s; }
+.faq-item:nth-child(4) { animation-delay: 0.4s; }
+
+.faq-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+.faq-item h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.5px;
+    color: #000000;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444444;
+    margin: 0;
 }
 
 /* Contact Form */
@@ -877,7 +959,8 @@ footer a:hover {
 
     .services-grid,
     .schedule-grid,
-    .testimonials-grid {
+    .testimonials-grid,
+    .faq-grid {
         grid-template-columns: 1fr;
     }
 
@@ -897,6 +980,14 @@ footer a:hover {
 
     .footer-links {
         align-items: center;
+    }
+
+    .faq-item {
+        padding: 2rem;
+    }
+
+    .faq-grid {
+        gap: 2rem;
     }
 
     .contact-form {
